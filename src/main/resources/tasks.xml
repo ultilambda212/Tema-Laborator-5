@@ -1,0 +1,34 @@
+<Values>
+  <item>
+    <id>55c2caba-3773-4af5-a968-7c6eedcc3abb</id>
+    <title>MyTitle</title>
+    <description>text</description>
+    <assignedTo>Gaby</assignedTo>
+    <status>CLOSED</status>
+    <severity>LOW</severity>
+  </item>
+  <item>
+    <id>b6a9029e-d2f1-4de8-b056-3f517ccc545d</id>
+    <title>MyDitle</title>
+    <description>text1</description>
+    <assignedTo>Gaby1</assignedTo>
+    <status>CLOSED</status>
+    <severity>LOW</severity>
+  </item>
+  <item>
+    <id>2b6deef4-b7ac-454f-9ed9-646708071b2a</id>
+    <title>MyBitle</title>
+    <description>text1</description>
+    <assignedTo>Gaby1</assignedTo>
+    <status>CLOSED</status>
+    <severity>LOW</severity>
+  </item>
+  <item>
+    <id>4e562483-b179-4d36-82a6-85512e16afc9</id>
+    <title>MyAitle</title>
+    <description>text1</description>
+    <assignedTo>Gaby1</assignedTo>
+    <status>CLOSED</status>
+    <severity>LOW</severity>
+  </item>
+</Values>
