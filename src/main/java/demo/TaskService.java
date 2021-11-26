@@ -65,11 +65,15 @@ public class TaskService {
         return task;
     }
 
-    public List<TaskModel> getTasksSortedByTitle(String title, String description, String assignedTo, TaskModel.TaskStatus status, TaskModel.TaskSeverity severity) {
+    public List<TaskModel> getTasksSortedByTitle(String title, String description, String assignedTo, TaskModel.TaskStatus status, TaskModel.TaskSeverity severity) throws IOException {
         List<TaskModel> tasks = repository.findAll().stream()
                                 .filter(task -> isMatch(task, title, description, assignedTo, status, severity))
                                 .collect(Collectors.toList());
         Collections.sort(tasks, new SortTaskByTitle());
+
+        for(TaskModel task : tasks) {
+            repository.saveSortedTask(task);
+        }
         return tasks;
     }
 

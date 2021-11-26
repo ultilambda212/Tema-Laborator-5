@@ -57,10 +57,7 @@ public class TaskRepository {
     private void writeToFileSorted() throws IOException {
         ObjectMapper objectMapper = new XmlMapper();
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-        List<TaskModel> tasks = (List<TaskModel>) findAll();
-        Collections.sort(tasks, new SortTaskByTitle());
-        objectMapper.writeValue(file2, tasks);
-
+        objectMapper.writeValue(file2, findAll());
     }
 
     private void writeToFile() throws IOException {

@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("api/tasks")
@@ -36,11 +39,6 @@ public class TaskController {
                                                                 @RequestParam(required = false) TaskModel.TaskStatus status,
                                                                 @RequestParam(required = false) TaskModel.TaskSeverity severity) throws IOException {
         List<TaskModel> tasks = service.getTasksSortedByTitle(title, description, assignedTo, status, severity);
-
-        for(TaskModel task : tasks) {
-            service.addSortedTask(task);
-        }
-
         return tasks.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(tasks);
     }
 
